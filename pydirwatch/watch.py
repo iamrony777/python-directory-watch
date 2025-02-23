@@ -29,7 +29,7 @@ class FileInfo:
 
 
 @contextmanager
-def mangage_history(history_file: Path) -> Generator[set[str], None, None]:
+def manage_history(history_file: Path) -> Generator[set[str], None, None]:
     """Context manager which reads and writes to file with newline delimited strings.
     Yeilds a set of the strings contained in the file or an empty set,
     any items added to the set will be written to the file when the context manager exits.
@@ -180,7 +180,7 @@ def listen_with_history(
         Will yield paths to new files found in the directory. Blocks until new file is found.
 
     """
-    with mangage_history(history_filepath) as h:
+    with manage_history(history_filepath) as h:
         for path in listen(
             path=path,
             history_paths=h,

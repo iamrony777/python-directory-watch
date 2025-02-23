@@ -1,4 +1,4 @@
-from pydirwatch import listen, mangage_history
+from pydirwatch import listen, manage_history
 import pytest
 from pathlib import Path
 
@@ -24,7 +24,7 @@ def filled_history_file(tmpdir):
 def test_manage_history(empty_history_file):
     items = set(["fasjhf", "sdfhslfh", "sjdfhsjkdhf", "skjdfhskdjf"])
 
-    with mangage_history(empty_history_file) as h:
+    with manage_history(empty_history_file) as h:
         h.update(set(items))
 
     with open(empty_history_file) as f:
@@ -36,7 +36,7 @@ def test_manage_history(empty_history_file):
 def test_manage_history_filled(filled_history_file):
     items = set(["fasjhf", "sdfhslfh", "sjdfhsjkdhf", "skjdfhskdjf"])
 
-    with mangage_history(filled_history_file) as h:
+    with manage_history(filled_history_file) as h:
         h.update(set(items))
 
     with open(filled_history_file) as f:

@@ -1,4 +1,4 @@
-from pydirwatch import listen, mangage_history
+from pydirwatch import listen, manage_history
 from threading import Thread, Event
 import time
 import pytest

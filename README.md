@@ -52,7 +52,7 @@ from pydirwatch import listen, manage_history
 
 history_file  = (Path.cwd().resolve() / Path("~pydirwatch_history.temp"))
 
-with mangage_history(history_file) as history:
+with manage_history(history_file) as history:
 
     for new_file_path in listen(Path("test_dir"), history_paths=history_paths, pattern = "*.txt"):
 
@@ -72,6 +72,6 @@ with mangage_history(history_file) as history:
 ## Installation
 
 ```
-pip install git+https://github.com/noahridge/python-directory-watch.git
+pip install git+https://github.com/iamrony777/python-directory-watch.git
 ```
 
